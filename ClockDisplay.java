@@ -85,5 +85,11 @@ public class ClockDisplay
     {
         displayString = hours.getDisplayValue() + ":" + 
                         minutes.getDisplayValue();
+        if(hours.getValue()>=12)
+        {
+            displayString+= " PM";
+        }else {
+            displayString+= " AM";
+        }
     }
 }
