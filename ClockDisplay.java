@@ -83,7 +83,19 @@ public class ClockDisplay
      */
     private void updateDisplay()
     {
-        displayString = hours.getDisplayValue() + ":" + 
+        int currentHour;
+        currentHour = hours.getValue();
+        String hoursString = "" + currentHour;
+        if(currentHour==0)
+        {
+            hoursString = "12";
+        }else if(currentHour>=12)
+        {
+            currentHour = currentHour - 12;
+        }
+        
+        
+        displayString = hoursString + ":" + 
                         minutes.getDisplayValue();
         if(hours.getValue()>=12)
         {
