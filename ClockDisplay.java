@@ -85,7 +85,9 @@ public class ClockDisplay
     {
         int currentHour = hours.getValue();
         String hoursString = "" + currentHour;
-        
+        /**
+         * replaces 0 with 12 and subtracts 12 hours when the clock hits 13-23
+         */
         if(currentHour==0)
         {
             hoursString = "12";
@@ -97,6 +99,9 @@ public class ClockDisplay
         
         displayString = hoursString + ":" + 
                         minutes.getDisplayValue();
+        /**
+         * determines AM versus PM with an if statement
+         */
         if(hours.getValue()>=12)
         {
             displayString+= " PM";
