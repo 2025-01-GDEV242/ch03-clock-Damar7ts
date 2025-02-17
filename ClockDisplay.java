@@ -104,6 +104,9 @@ public class ClockDisplay
             hoursString = "12";
             meridian = "AM";
             isAM = true;
+        }else if(currentHour == 0)
+        {
+            hoursString = "12";
         }else {
             
         }
