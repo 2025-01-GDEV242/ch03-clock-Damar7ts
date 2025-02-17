@@ -44,7 +44,7 @@ public class ClockDisplay
     {
         hours = new NumberDisplay(12);
         minutes = new NumberDisplay(60);
-        setTime(hour, minute);
+        setTime(hour, minute, isAM);
     }
 
     /**
@@ -64,10 +64,11 @@ public class ClockDisplay
      * Set the time of the display to the specified hour and
      * minute.
      */
-    public void setTime(int hour, int minute)
+    public void setTime(int hour, int minute, boolean meridian)
     {
         hours.setValue(hour);
         minutes.setValue(minute);
+        isAM = meridian;
         updateDisplay();
     }
 
