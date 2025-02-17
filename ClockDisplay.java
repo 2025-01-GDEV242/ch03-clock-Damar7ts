@@ -84,19 +84,39 @@ public class ClockDisplay
     private void updateDisplay()
     {
         int currentHour = hours.getValue();
+        int currentTime = currentHour + minutes.getValue();
         String hoursString = "" + currentHour;
+        boolean isAM = false;
+        String meridian = "PM";
+        
         
         /**
          * changed hour 0 to display 12
+         * set the clock to display and switch between AM & PM
          */
-        if(currentHour==0)
+        if(currentTime == 0 && isAM == true)
         {
             hoursString = "12";
-        }else
-        {
+            meridian = "PM";
+            isAM = false;
+        }else if(currentTime == 0 && isAM == false){
+            hoursString = "12";
+            meridian = "AM";
+            isAM = true;
+        }else {
+            
+        }
         
+        /**
+         * This displays the meridian based on the isAM boolean statement
+         */
+        if(isAM == true)
+        {
+            meridian = "AM";
+        } else {
+            meridian = "PM";
         }
         displayString = hoursString + ":" + 
-                        minutes.getDisplayValue();
+                        minutes.getDisplayValue() + " " + meridian;
     }
 }
