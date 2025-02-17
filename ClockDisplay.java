@@ -22,6 +22,7 @@ public class ClockDisplay
     private NumberDisplay hours;
     private NumberDisplay minutes;
     private String displayString;    // simulates the actual display
+    private boolean isAM = false;
     
     /**
      * Constructor for ClockDisplay objects. This constructor 
@@ -86,7 +87,6 @@ public class ClockDisplay
         int currentHour = hours.getValue();
         int currentTime = currentHour + minutes.getValue();
         String hoursString = "" + currentHour;
-        boolean isAM = false;
         String meridian = "PM";
         
         
